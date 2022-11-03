@@ -1,0 +1,10 @@
+.inputContainer:has(input:focus) {
+  border-color: #49111c;
+}
+
+.autoComplete:-webkit-autofill,
+.autoComplete:-webkit-autofill:hover,
+.autoComplete:-webkit-autofill:focus,
+.autoComplete:-webkit-autofill:active {
+  -webkit-background-clip: text;
+}

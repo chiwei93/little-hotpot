@@ -1,0 +1,3 @@
+.label:has(input:focus) {
+  color: #49111c;
+}

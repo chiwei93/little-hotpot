@@ -1,0 +1,40 @@
+.sidebar {
+  width: min(75vw, 18rem);
+  overflow-x: hidden;
+}
+
+.chevronActive {
+  transform: rotate(90deg);
+  transition: transform 0.15s;
+}
+
+.chevron {
+  transform: rotate(0);
+  transition: transform 0.15s;
+}
+
+.noScrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.noScrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media only screen and (min-width: 744px) {
+  .sidebar {
+    width: 6rem;
+    transition: width 0.15s;
+  }
+
+  .sidebar:hover {
+    width: min(75vw, 18rem);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .sidebar {
+    width: min(75vw, 18rem);
+  }
+}
