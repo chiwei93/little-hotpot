@@ -3,13 +3,13 @@ import type { FormEvent } from "react";
 import styles from "./Form.module.css";
 
 export interface Props {
+  onSubmit: () => void;
   bgColor?: string;
   children?: React.ReactNode;
-  onSubmit?: () => void;
 }
 
 const Form = (props: Props) => {
-  const { children, bgColor = "white", onSubmit = () => {} } = props;
+  const { children, bgColor = "white", onSubmit } = props;
 
   const onFormSubmit = (e: FormEvent) => {
     e.preventDefault();

@@ -4,8 +4,8 @@ import styles from "./TextInput.module.css";
 
 export interface Props {
   id: string;
+  onChange: (name: string, value: string) => void;
   initialValue?: string;
-  onChange?: (name: string, value: string) => void;
   name?: string;
   labelText?: string;
   inputType?: string;
@@ -18,7 +18,7 @@ const TextInput = (props: Props) => {
   const {
     id,
     initialValue = "",
-    onChange = (name: string, value: string) => {},
+    onChange,
     name = undefined,
     labelText = "Label Text",
     inputType = "text",

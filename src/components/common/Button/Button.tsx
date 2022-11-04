@@ -2,7 +2,7 @@ export interface Props {
   buttonType?: "submit" | "button" | "reset" | undefined;
   designType?: "filled" | "outline";
   children?: React.ReactNode;
-  onClick?: () => void;
+  onClick: () => void;
 }
 
 const Button = (props: Props) => {
@@ -10,7 +10,7 @@ const Button = (props: Props) => {
     buttonType = "submit",
     designType = "filled",
     children,
-    onClick = () => {},
+    onClick,
   } = props;
 
   const onClickBtn = () => {

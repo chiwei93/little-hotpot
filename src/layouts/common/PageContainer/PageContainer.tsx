@@ -1,5 +1,3 @@
-import _ from "lodash";
-
 import { doesPageCenterItems } from "utils/centerItemsOnPage";
 
 export interface Props {

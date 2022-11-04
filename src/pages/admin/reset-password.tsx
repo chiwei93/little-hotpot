@@ -101,7 +101,7 @@ const AdminResetPassword: NextPage = () => {
         </div>
 
         <div className="mt-8 flex flex-col text-sm largeMobile:mt-10 largeMobile:text-base tablet:text-lg">
-          <Button>Reset password</Button>
+          <Button onClick={() => _.noop()}>Reset password</Button>
         </div>
 
         <div className="mt-14 text-xs tablet:text-sm">

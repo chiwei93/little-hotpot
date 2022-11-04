@@ -9,7 +9,7 @@ export interface Props {
   initialValue?: boolean;
   name?: string;
   labelText?: string;
-  onChange?: (inputName: string, value: boolean) => void;
+  onChange: (inputName: string, value: boolean) => void;
 }
 
 const Checkbox = (props: Props) => {
@@ -18,7 +18,7 @@ const Checkbox = (props: Props) => {
     initialValue = false,
     name = undefined,
     labelText = "Label Text",
-    onChange = (inputName: string, value: boolean) => {},
+    onChange,
   } = props;
 
   const [showChecked, setShowChecked] = useState(initialValue);

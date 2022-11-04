@@ -4,7 +4,6 @@ import { Transition, Menu } from "@headlessui/react";
 import { MdSort } from "react-icons/md";
 import { FaUserCircle } from "react-icons/fa";
 import { BsHandbag } from "react-icons/bs";
-import _ from "lodash";
 
 import { doesPageCenterItems } from "utils/centerItemsOnPage";
 

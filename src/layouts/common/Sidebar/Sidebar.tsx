@@ -29,7 +29,7 @@ interface SidebarItemProps {
 
 const SidebarItem = (props: SidebarItemProps) => {
   const { icon, title, links, changeSidebarState, mouseOutOfSidebar } = props;
-  const closeFn = useRef(() => {});
+  const closeFn = useRef(() => _.noop());
 
   const onLinkClick = () => {
     if (window.innerWidth < TABLET_BREAKPOINT) {
