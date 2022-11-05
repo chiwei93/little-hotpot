@@ -34,6 +34,7 @@ module.exports = {
       },
       green: "#01B047",
       red: "#FF1C1C",
+      transparent: "transparent"
     },
     fontSize: {
       xxs: "0.58rem",
@@ -51,6 +52,7 @@ module.exports = {
       largeMobile: "400px",
       tablet: "744px",
       desktop: "1200px",
+      largeDesktop: "1440px"
     },
   },
   plugins: [],
