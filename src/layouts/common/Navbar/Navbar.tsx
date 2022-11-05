@@ -62,7 +62,9 @@ const Navbar = (props: NavbarProps) => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-10 flex flex-row items-center justify-between gap-x-2 border-b border-b-background-100 bg-white px-6 py-4 tablet:pr-10 ${
-        doesPageOnlyShowLogo ? "tablet:pl-10" : "tablet:pl-36 desktop:pl-80"
+        doesPageOnlyShowLogo
+          ? "tablet:pl-10"
+          : "tablet:pl-36 desktop:pl-[22rem] desktop:pr-14"
       }`}
       aria-label="primary navigation"
       id="top-navbar"
