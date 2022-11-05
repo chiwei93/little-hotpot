@@ -11,7 +11,7 @@ const buttonStyles = "transition";
 const activeButtonStyles =
   "hover:bg-primary hover:text-white active:bg-primary active:text-white rounded font-medium p-2";
 const nextAndPrevStyles = "flex items-center gap-x-[4px] justify-center";
-const nextAndPrevIconStyles = "mb-[2px] text-[1.1em]";
+const nextAndPrevIconStyles = "mb-[4px] text-[1.1em]";
 const pageNumberStyles = "px-3";
 
 export default function PageControls(props: Props) {
