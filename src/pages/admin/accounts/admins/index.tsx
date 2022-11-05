@@ -35,7 +35,7 @@ const breadcrumbs = [
 const gridStyle =
   "mediumMobile:grid mediumMobile:grid-cols-[1fr_4fr_1fr] mediumMobile:items-center gap-x-2 tablet:gap-x-4 largeDesktop:grid-cols-[1fr_5fr_2fr]";
 const infoGridStyle =
-  "tablet:grid tablet:grid-cols-2 tablet:gap-x-4 largeDesktop:grid-cols-[1fr_2fr_1fr_1fr]";
+  "tablet:grid tablet:grid-cols-2 tablet:gap-x-4 largeDesktop:grid-cols-[1fr_2fr_1fr_1fr] items-center";
 const dropdownBtnIconStyle =
   "text-[1.5em] text-gray-900 mt-1 mediumMobile:mt-0 tablet:text-2xl";
 
