@@ -38,15 +38,17 @@ const infoGridStyle =
   "tablet:grid tablet:grid-cols-2 tablet:gap-x-4 largeDesktop:grid-cols-[1fr_2fr_1fr_1fr] items-center";
 const dropdownBtnIconStyle =
   "text-[1.5em] text-gray-900 mt-1 mediumMobile:mt-0 tablet:text-2xl";
+const dropdownBtnContainerStyle = "flex items-center gap-x-4";
+const dropdownMenuTextStyle = "mt-[3px]";
 
 const dropdownMenuContent: DropdownMenuItem[] = [
   {
     type: "link",
     href: "/admin/accounts/admin",
     content: (
-      <span className="flex items-center gap-x-4">
+      <span className={`${dropdownBtnContainerStyle}`}>
         <FiInfo />
-        <span className="mt-[3px]">Information</span>
+        <span className={`${dropdownMenuTextStyle}`}>Information</span>
       </span>
     ),
     onClick: () => {
@@ -57,9 +59,9 @@ const dropdownMenuContent: DropdownMenuItem[] = [
     type: "link",
     href: "/admin/accounts/admin",
     content: (
-      <span className="flex items-center gap-x-4">
+      <span className={`${dropdownBtnContainerStyle}`}>
         <MdOutlineEdit />
-        <span className="mt-[3px]">Edit</span>
+        <span className={`${dropdownMenuTextStyle}`}>Edit</span>
       </span>
     ),
     onClick: () => {
@@ -70,9 +72,9 @@ const dropdownMenuContent: DropdownMenuItem[] = [
     type: "button",
     href: "",
     content: (
-      <span className="flex items-center gap-x-4">
+      <span className={`${dropdownBtnContainerStyle}`}>
         <FiTrash2 />
-        <span className="mt-[3px]">Delete</span>
+        <span className={`${dropdownMenuTextStyle}`}>Delete</span>
       </span>
     ),
     onClick: () => {
