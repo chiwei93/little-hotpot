@@ -1,10 +1,7 @@
 import Link from "next/link";
 import { BiChevronRightCircle } from "react-icons/bi";
 
-type Breadcrumb = {
-  title: string;
-  href: string;
-};
+import type { Breadcrumb } from "@/types/admin/breadcrumb";
 
 export interface Props {
   breadcrumbs: Breadcrumb[];
