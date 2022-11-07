@@ -70,6 +70,24 @@ const dropdownMenuContent: DropdownMenuItem[] = [
   },
 ];
 
+interface SortingButtonProps {
+  children: React.ReactNode;
+  onClick: () => void;
+}
+
+const SortingButton = (props: SortingButtonProps) => {
+  const { children, onClick } = props;
+
+  return (
+    <button className={tableHeaderBtnStyles} onClick={onClick}>
+      <span>{children}</span>
+      <span>
+        <FaSort className={sortIconStyles} />
+      </span>
+    </button>
+  );
+};
+
 const AccountsDashboard: NextPage = () => {
   const onCreateAccountClick = () => {
     _.noop();
@@ -83,55 +101,34 @@ const AccountsDashboard: NextPage = () => {
     _.noop();
   };
 
+  const sortContent = () => {
+    _.noop();
+  };
+
   const renderTableHeader = () => {
     return (
       <div
         className={`${gridStyle} text-xs font-semibold uppercase text-gray-900 tablet:px-8 tablet:py-3`}
       >
         <div className="relative">
-          <button className={tableHeaderBtnStyles}>
-            <span>status</span>
-            <span>
-              <FaSort className={sortIconStyles} />
-            </span>
-          </button>
+          <SortingButton onClick={sortContent}>status</SortingButton>
         </div>
 
         <div className={infoGridStyle}>
           <div className="relative">
-            <button className={tableHeaderBtnStyles}>
-              <span>name</span>
-              <span>
-                <FaSort className={sortIconStyles} />
-              </span>
-            </button>
+            <SortingButton onClick={sortContent}>name</SortingButton>
           </div>
 
           <div className="relative">
-            <button className={tableHeaderBtnStyles}>
-              <span>email</span>
-              <span>
-                <FaSort className={sortIconStyles} />
-              </span>
-            </button>
+            <SortingButton onClick={sortContent}>email</SortingButton>
           </div>
 
           <div className="relative hidden largeDesktop:block">
-            <button className={tableHeaderBtnStyles}>
-              <span>role</span>
-              <span>
-                <FaSort className={sortIconStyles} />
-              </span>
-            </button>
+            <SortingButton onClick={sortContent}>role</SortingButton>
           </div>
 
           <div className="relative hidden largeDesktop:block">
-            <button className={tableHeaderBtnStyles}>
-              <span>updated at</span>
-              <span>
-                <FaSort className={sortIconStyles} />
-              </span>
-            </button>
+            <SortingButton onClick={sortContent}>updated at</SortingButton>
           </div>
         </div>
 
