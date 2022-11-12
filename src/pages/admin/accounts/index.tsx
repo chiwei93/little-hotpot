@@ -22,21 +22,32 @@ const breadcrumbs = [
 const gridStyle =
   "mediumMobile:grid mediumMobile:grid-cols-[1fr_4fr_1fr] mediumMobile:items-center gap-x-2 tablet:gap-x-4 largeDesktop:grid-cols-[1fr_5fr_2fr]";
 const infoGridStyle =
-  "tablet:grid tablet:grid-cols-2 tablet:gap-x-4 largeDesktop:grid-cols-[1fr_2fr_1fr_1fr] items-center";
-const dropdownBtnContainerStyle = "flex items-center gap-x-4";
-const dropdownMenuTextStyle = "mt-[3px]";
-const tableHeaderBtnStyles = "flex items-center gap-x-2 uppercase";
-const sortIconStyles = "text-sm mb-[3px]";
+  "tablet:grid tablet:grid-cols-2 tablet:gap-x-4 largeDesktop:grid-cols-[1fr_2fr_1.5fr_1fr] items-center";
+
+interface DropdownMenuItemContentProps {
+  children?: React.ReactNode;
+  text: string;
+}
+
+const DropdownMenuItemContent = (props: DropdownMenuItemContentProps) => {
+  const { text, children } = props;
+
+  return (
+    <span className="flex items-center gap-x-4">
+      {children}
+      <span className="mt-[3px]">{text}</span>
+    </span>
+  );
+};
 
 const dropdownMenuContent: DropdownMenuItem[] = [
   {
     type: "link",
     href: "/admin/accounts",
     content: (
-      <span className={`${dropdownBtnContainerStyle}`}>
+      <DropdownMenuItemContent text="Information">
         <FiInfo />
-        <span className={`${dropdownMenuTextStyle}`}>Information</span>
-      </span>
+      </DropdownMenuItemContent>
     ),
     onClick: () => {
       _.noop();
@@ -46,10 +57,9 @@ const dropdownMenuContent: DropdownMenuItem[] = [
     type: "link",
     href: "/admin/accounts",
     content: (
-      <span className={`${dropdownBtnContainerStyle}`}>
+      <DropdownMenuItemContent text="Edit">
         <MdOutlineEdit />
-        <span className={`${dropdownMenuTextStyle}`}>Edit</span>
-      </span>
+      </DropdownMenuItemContent>
     ),
     onClick: () => {
       _.noop();
@@ -59,10 +69,9 @@ const dropdownMenuContent: DropdownMenuItem[] = [
     type: "button",
     href: "",
     content: (
-      <span className={`${dropdownBtnContainerStyle}`}>
+      <DropdownMenuItemContent text="Delete">
         <FiTrash2 />
-        <span className={`${dropdownMenuTextStyle}`}>Delete</span>
-      </span>
+      </DropdownMenuItemContent>
     ),
     onClick: () => {
       _.noop();
@@ -79,10 +88,10 @@ const SortingButton = (props: SortingButtonProps) => {
   const { children, onClick } = props;
 
   return (
-    <button className={tableHeaderBtnStyles} onClick={onClick}>
+    <button className="flex items-center gap-x-2 uppercase" onClick={onClick}>
       <span>{children}</span>
       <span>
-        <FaSort className={sortIconStyles} />
+        <FaSort className="text-sm mb-[3px]" />
       </span>
     </button>
   );
@@ -172,7 +181,7 @@ const AccountsDashboard: NextPage = () => {
       </div>
 
       <div className="mt-6 text-sm min-[500px]:flex min-[500px]:justify-end">
-        <div className="min-[500px]:w-[60%] tablet:w-[50%] desktop:w-[23rem]">
+        <div className="min-[500px]:w-[60%] tablet:w-[50%] desktop:w-[23rem] desktop:text-base">
           <Searchbar />
         </div>
       </div>
