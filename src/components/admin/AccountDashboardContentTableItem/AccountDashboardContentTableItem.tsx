@@ -18,13 +18,16 @@ import {
   MEDIUM_MOBILE_BREAKPOINT,
   TABLET_BREAKPOINT,
 } from "@/constants/common/breakpoints";
+import SelectListbox from "@/components/common/SelectListbox/SelectListbox";
 
 const defaultGridStyle =
   "mediumMobile:grid mediumMobile:grid-cols-[1fr_4fr_1fr] mediumMobile:items-center gap-x-2 tablet:gap-x-4 largeDesktop:grid-cols-[1fr_5fr_2fr]";
 const defaultInfoGridStyle =
-  "tablet:grid tablet:grid-cols-2 tablet:gap-x-4 largeDesktop:grid-cols-[1fr_2fr_1fr_1fr] items-center";
+  "tablet:grid tablet:grid-cols-2 tablet:gap-x-4 largeDesktop:grid-cols-[1fr_2fr_1.5fr_1fr] items-center";
 const dropdownBtnIconStyle =
   "text-[1.5em] text-gray-900 mt-1 mediumMobile:mt-0 tablet:text-2xl";
+
+const roleOptions = ["super admin", "admin", "employee"];
 
 interface InfoItemProps {
   topLabelText: string;
@@ -157,7 +160,12 @@ export default function AccountDashboardContentTableItem(
           />
         </div>
 
-        <div className="hidden largeDesktop:block">Super admin</div>
+        <div className="hidden largeDesktop:block">
+          <SelectListbox
+            options={roleOptions}
+            optionPaddingHorizontalStyles="pl-9 pr-3"
+          />
+        </div>
 
         <div className="hidden largeDesktop:block">20 March 2022</div>
       </div>
