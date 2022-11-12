@@ -11,7 +11,7 @@ interface Props {
 }
 
 const menuItemStyles = "inline-block w-full p-2 rounded-md transition";
-const activeMenuItemStyles = "bg-primary text-white";
+const activeMenuItemStyles = "bg-background-100 text-gray-900";
 
 export default function DropdownMenu(props: Props) {
   const {
@@ -73,7 +73,7 @@ export default function DropdownMenu(props: Props) {
       >
         <Menu.Items>
           <div
-            className={`absolute top-full right-0 z-30 mt-2 rounded-md bg-white shadow shadow-md ${overlayMenuPositionStyle} font-inherit min-w-[8rem] p-1 tablet:min-w-[9rem] tablet:p-2`}
+            className={`absolute top-full right-0 z-30 mt-2 rounded-md bg-white shadow-md ${overlayMenuPositionStyle} font-inherit min-w-[8rem] p-1 tablet:min-w-[9rem] tablet:p-2`}
           >
             {renderMenuItems()}
           </div>
